@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+}
+:root {
+	overflow-x: hidden !important;
+	--active: #5a13e3;
+	--bg: #f5f8f9;
+	--default: #ffffff;
+	--color: #eef2f6;
+	--primary: #0deafb;
+	--gradient1: rgba(16, 227, 218, 0.625109418767507);
+	--gradient2: rgba(40, 16, 227, 0.30017944677871145);
+	--hero_active: #717171;
+}
+@font-face {
+	font-family: "Material";
+	src: url("./fonts/Catamaran-VariableFont_wght.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	font-family: Material, sans-serif !important;
+	display: flex;
+	margin: 0;
+	width: 100vw;
+}
+button,
+.partner_btn {
+	border-radius: 28px !important;
+	min-width: 3rem !important;
+}
+.tab_list button {
+	min-width: 200px !important;
+}
+.active {
+	color: var(--active);
+	font-weight: 700;
+	background-color: transparent;
+}
+input,
+textarea {
+	background: var(--bg) !important;
+	border: 1px solid var(--color) !important;
+	box-shadow: none !important;
+	width: 100% !important;
+}
+.border_feature,
+.service_bg {
+	margin: 1em;
+	padding: 2em;
+}
+.border_feature {
+	border: 1px solid var(--primary);
+}
+button#tabs[aria-selected="true"] {
+	font-weight: bolder;
+}
+.service_bg {
+	background: linear-gradient(
+		90deg,
+		var(--gradient2) 0%,
+		var(--gradient1) 100%
+	);
+	border: none;
+}
+.img_feature {
+	padding: 0;
+	background: var(--bg);
+}
+li#downshift {
+	list-style-type: none;
+}
+.country_select button {
+	color: #010b2f !important;
+	font-weight: bold;
+	cursor: pointer;
+	border: thin solid var(--default) !important;
+	background-color: var(--default);
+	border-radius: 28px !important;
+	height: 40px;
+	font-family: inherit !important;
+}
+.country_select ul {
+	position: absolute;
+	z-index: 999999;
+	border: 2px solid var(--default);
+	border-radius: 0 !important;
+	margin-top: 0;
+	padding: 8px 0;
+	max-height: 150px;
+	overflow: auto;
+	border-radius: 5px !important;
+}
+button#rfs-btn {
+	font-weight: 500 !important;
+}
+select:focus-visible {
+	border: none;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+.cover-video {
+	max-width: 100%;
+	height: 75vh;
+	width: 100vw;
+	object-fit: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+	.tab_list button {
+		min-width: 100px !important;
+	}
+	.country_select {
+		display: none;
+	}
+}
+@media only screen and (max-width: 800px) {
+	.tab_list button {
+		min-width: auto !important;
+	}
+	.country_select {
+		display: none;
+	}
+	.cover-video {
+		/* max-width: 100%;
+		height: 100%;
+		width: 100vw;
+		object-fit: cover; */
+		height: 80vh;
+		width: 100vw;
+		object-fit: cover;
+	}
+}
