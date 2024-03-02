@@ -20,7 +20,7 @@ export default function Footer() {
 				justify={"center"}
 				align={"center"}
 			>
-				<Link to="/" name="my-link">
+				<Link onClick={() => window.scrollTo(0)} name="my-link">
 					<Image
 						src={logo}
 						alt="brand_logo"

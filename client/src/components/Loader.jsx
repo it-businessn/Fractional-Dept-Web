@@ -10,7 +10,7 @@ const Loader = () => {
 				height="100vh"
 				w={"100vw"}
 			>
-				<Spinner size="xl" mx={"auto"} color="blue.500" />
+				<Spinner size="lg" mx={"auto"} color="blue.500" />
 			</Box>
 		</Center>
 	);

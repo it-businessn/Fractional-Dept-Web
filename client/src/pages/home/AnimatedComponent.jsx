@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { useBreakpointValue } from "../../services/common";
 
 const AnimatedComponent = ({
 	children,
@@ -9,6 +10,7 @@ const AnimatedComponent = ({
 	rotate,
 	slideLeft,
 }) => {
+	const { isMobile } = useBreakpointValue();
 	const [ref, inView] = useInView({
 		triggerOnce: true,
 		threshold: 0.3,
@@ -26,7 +28,7 @@ const AnimatedComponent = ({
 	const slideInLeftAnimation = {
 		initial: { scale: 0.5, opacity: 0 },
 		animate: inView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 },
-		transition: { duration: 4 },
+		transition: { duration: isMobile ? 0.5 : 4 },
 	};
 	const rotateLeftAnimation = {
 		initial: { opacity: 0, scale: 0, rotate: -45 },

@@ -10,6 +10,7 @@ const Contact = lazy(() => import("./pages/contact"));
 const Home = lazy(() => import("./pages/home"));
 const ServiceDetail = lazy(() => import("./pages/services/ServiceDetail"));
 const Services = lazy(() => import("./pages/services"));
+const PageNotFound = lazy(() => import("./components/PageNotFound"));
 
 export const router = createBrowserRouter([
 	{
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
 			{
 				path: "contact",
 				element: <Contact />,
+			},
+			{
+				path: "*",
+				element: <PageNotFound />,
 			},
 		],
 	},

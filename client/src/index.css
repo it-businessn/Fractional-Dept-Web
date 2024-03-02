@@ -10,7 +10,7 @@
 	--primary: #0deafb;
 	--gradient1: rgba(16, 227, 218, 0.625109418767507);
 	--gradient2: rgba(40, 16, 227, 0.30017944677871145);
-	--hero_active: #717171;
+	--hero_active: #edf0ff;
 }
 @font-face {
 	font-family: "Material";
