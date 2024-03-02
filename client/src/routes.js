@@ -1,16 +1,24 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
+
 import Root from "./components";
-import About from "./pages/about";
-import Careers from "./pages/careers";
-import Contact from "./pages/contact";
-import Home from "./pages/home";
-import Services from "./pages/services";
-import ServiceDetail from "./pages/services/ServiceDetail";
+import Loader from "./components/Loader";
+
+const About = lazy(() => import("./pages/about"));
+const Careers = lazy(() => import("./pages/careers"));
+const Contact = lazy(() => import("./pages/contact"));
+const Home = lazy(() => import("./pages/home"));
+const ServiceDetail = lazy(() => import("./pages/services/ServiceDetail"));
+const Services = lazy(() => import("./pages/services"));
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Root />,
+		element: (
+			<Suspense fallback={<Loader />}>
+				<Root />
+			</Suspense>
+		),
 		children: [
 			{
 				index: true,

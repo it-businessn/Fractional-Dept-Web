@@ -2,25 +2,25 @@ import accounting from "./assets/images/services/accounting.jpg";
 import ai from "./assets/images/services/ai.jpg";
 import aiData from "./assets/images/services/aiData.jpg";
 import bookkeeper from "./assets/images/services/bookkeeper.jpg";
-import cfo from "./assets/images/services/cfo.png";
+import cfo from "./assets/images/services/cfo.jpg";
 import controller from "./assets/images/services/controller.png";
 import hr from "./assets/images/services/hr.png";
 import {
 	default as aiExpert,
 	default as infoTech,
 } from "./assets/images/services/infoTech.png";
-import infoTechAutomate from "./assets/images/services/infoTechAutomate.png";
+import infoTechAutomate from "./assets/images/services/infoTechAutomate.jpg";
 import infoTechIT from "./assets/images/services/infoTechIT.png";
 import {
 	default as infoTechWeb,
 	default as marketing,
-} from "./assets/images/services/marketing.png";
+} from "./assets/images/services/marketing.jpg";
 import marketingManager from "./assets/images/services/marketingManager.png";
 import marketingMedia from "./assets/images/services/marketingMedia.png";
 import {
 	default as infoTechIntegrate,
 	default as marketingStrategist,
-} from "./assets/images/services/marketingStrategist.png";
+} from "./assets/images/services/marketingStrategist.jpg";
 import payroll from "./assets/images/services/payroll.png";
 import payrollAdmin from "./assets/images/services/payrollAdmin.png";
 import payrollHR from "./assets/images/services/payrollHR.jpg";

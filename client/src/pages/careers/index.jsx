@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { MdCheckCircle } from "react-icons/md";
-import careers from "../../assets/images/services/careers.png";
+import careers from "../../assets/images/services/careers.jpg";
 import AnimatedComponent from "../home/AnimatedComponent";
 import CareersForm from "./CareersForm";
 
