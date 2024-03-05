@@ -14,7 +14,6 @@
 		<meta
 			http-equiv="Content-Security-Policy"
 			content="
-					default-src 'none';
 					script-src 'self';
 					style-src 'self' 'unsafe-inline';
 					img-src 'self';
@@ -23,7 +22,7 @@
 					media-src 'self';
 					frame-src 'none';
 					frame-ancestors 'none';
-					connect-src 'self';
+					connect-src 'self' https://fd-website *;
 					worker-src 'self';
   					"
 		/>
