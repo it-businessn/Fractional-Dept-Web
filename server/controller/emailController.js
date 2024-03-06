@@ -20,11 +20,11 @@ exports.sendEmail = async (
 	const mailOptions = {
 		from: "julik@businessn.com",
 		to: "julik@businessn.com",
-		// cc: [
-		// 	"davidd@businessn.com",
-		// 	// "andrew.dehkurdi@fractionaldepartments.com",
-		// 	// "erwan@fractionaldepartments.com",
-		// ],
+		cc: [
+			"davidd@businessn.com",
+			// "andrew.dehkurdi@fractionaldepartments.com",
+			// "erwan@fractionaldepartments.com",
+		],
 		subject:
 			"New File Upload Notification from https://fractionaldepartments.com/",
 		text: "A file has been uploaded. Check the attachment.",
@@ -43,9 +43,7 @@ exports.sendEmail = async (
                 <li style="margin-bottom: 10px;"><strong>Candidate Name: ${name}</strong> </li>
                 <li style="margin-bottom: 10px;"><strong>Candidate's Email: ${email}</strong> </li>
                 <li style="margin-bottom: 10px;"><strong>Phone Number: ${phoneNumber}</strong> </li>
-                <li style="margin-bottom: 10px;"><strong>File Uploaded On: ${new Date(
-									uploadedOn,
-								)}</strong> </li>
+                
                 </ul>
             
 
