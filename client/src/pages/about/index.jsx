@@ -19,7 +19,7 @@ export default function About() {
 					minH={"50vh"}
 					m={{ md: "0 2em", lg: "2em auto" }}
 					pt={{ md: "3em" }}
-					maxW={"1180px"}
+					maxW={"1450px"}
 					direction={{ base: "column", md: "row" }}
 				>
 					<Flex flex={1} align={"center"} justify={"center"}>
@@ -42,14 +42,15 @@ export default function About() {
 								</Text>
 							</Heading>
 							<Text fontSize={{ base: "sm", md: "xl" }}>
-								Founded by a group of professionals that saw a need to to
-								deliver professional standards to companies of all sizes. We
-								have a passion to give organizations resources to compete in an
-								ever more complex business environment.
+								Our founders recognized a need for affordable implementation of
+								best practices in key roles. We aim to be the trusted source for
+								small businesses, providing fractional controllers and
+								bookkeepers.
 							</Text>
 							<Text fontSize={{ base: "sm", md: "xl" }}>
-								Our solutions were developed to help organizations of all sizes
-								to be better run, more efficient and much more profitable.
+								Our mission is to empower small businesses with top-notch admin
+								at affordable prices, fostering growth and teamwork. Join us on
+								this exciting journey!
 							</Text>
 							<Stack direction={{ base: "column", md: "row" }} spacing={4}>
 								<Link to="/contact" name="my-link">

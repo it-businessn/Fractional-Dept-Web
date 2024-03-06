@@ -54,7 +54,7 @@ export const TABS = [
 		heading: "Accounting",
 		imgSrc: accounting,
 		subheading:
-			"Dial in your operations by having your departments anchored by strong team players.",
+			"Build out your accounting team with dedicated individuals who excel as team players, facilitating precision and efficiency in financial record keeping and management tasks. Our meticulous work goes beyond just the numbers, providing critical support for your business.",
 		jobTitle: ["CFO", "Controller", "Bookkeeper"],
 		buttonText: "Learn more about our Accounting solutions",
 	},
@@ -63,7 +63,7 @@ export const TABS = [
 		heading: "Information Technology",
 		imgSrc: infoTech,
 		subheading:
-			"Dial in your operations by having your departments anchored by strong team players.",
+			"Elevate your information technology department by enlisting adept team players who will be dedicated to enabling responsive problem solving, swift adaptation and resilience playing a crucial role in maintaining the reliability of the business's digital systems and tech tools.",
 		jobTitle: [
 			"Automations Specialist",
 			"Web Developer",
@@ -77,7 +77,7 @@ export const TABS = [
 		heading: "Marketing",
 		imgSrc: marketing,
 		subheading:
-			"Dial in your operations by having your departments anchored by strong team players.",
+			"Strengthen your marketing department with committed team players at its core, ensuring seamless operations and optimal performance in your promotional efforts.  Build a positive brand image, attract and retain profitable customers, ultimately contributing to your success in competitive markets.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
 	},
@@ -86,7 +86,7 @@ export const TABS = [
 		heading: "AI",
 		imgSrc: ai,
 		subheading:
-			"Dial in your operations by having your departments anchored by strong team players.",
+			"Embrace AI's transformative potential with our expert team of AI, data, and decision scientists. We specialize in identifying opportunities to enhance and optimize your business processes, ensuring cost-effectiveness and efficiency. Let us guide you toward unlocking new possibilities for success.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
 	},
@@ -95,16 +95,16 @@ export const TABS = [
 		heading: "HR",
 		imgSrc: hr,
 		subheading:
-			"Dial in your operations by having your departments anchored by strong team players.",
+			"As your dedicated HR partner, we focus on simplifying tasks, fostering a positive workplace culture, and enhancing talent management. Our efficient team contributes to increased productivity and employee satisfaction, handling everything from recruitment to conflict resolution to ensure your workforce thrives.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
 	},
 	{
 		id: "Payroll",
-		heading: "Payroll",
+		heading: "Payroll Administration",
 		imgSrc: payroll,
 		subheading:
-			"Dial in your operations by having your departments anchored by strong team players.",
+			"Our  Administrator  ensures accurate and timely payments for your employees, handling tax deductions, and maintaining precise records. Our Payroll Administrators bring attention to detail, knowledge of regulations, and effective communication, adapting to changes and ensuring seamless compliance with industry trends for worry-free payroll management.",
 		jobTitle: ["Payroll Administrator", "HR Manager"],
 		buttonText: "Learn more about our Payroll & HR solutions",
 	},

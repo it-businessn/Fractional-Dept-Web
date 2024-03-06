@@ -11,7 +11,7 @@ export default function TabService() {
 				mx={{ lg: "12em" }}
 			>
 				{TABS.map((item) => (
-					<RoundedCard key={`service-${item.id}`} data={item} />
+					<RoundedCard isTab key={`service-${item.id}`} data={item} />
 				))}
 			</SimpleGrid>
 		</Flex>

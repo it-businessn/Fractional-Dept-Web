@@ -2,7 +2,7 @@ import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { convertPrice } from "../../util";
 
-const RoundedCard = ({ data }) => {
+const RoundedCard = ({ data, isTab }) => {
 	const { id, imgSrc, heading, subheading, price, detail_id } = data;
 	const navigate = useNavigate();
 	const selectedCountry = localStorage.getItem("code");
@@ -35,12 +35,15 @@ const RoundedCard = ({ data }) => {
 				<Text fontSize="xl" fontWeight="semibold" mb="2">
 					{heading}
 				</Text>
-				<Text fontSize="md" height="6em">
+				<Text
+					fontSize="md"
+					height={{ base: "auto", md: isTab ? "11em" : "6em" }}
+				>
 					{subheading}
 				</Text>
 				{price && (
 					<>
-						<Text fontSize="md" mt="4em">
+						<Text fontSize="md" mt={{ base: "2em", md: "3em" }}>
 							Starting at
 						</Text>
 						<Text fontSize="xl" fontWeight="semibold">

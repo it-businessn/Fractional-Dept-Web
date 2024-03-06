@@ -14,13 +14,61 @@ import { MdCheckCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export default function MissionValues() {
+	const MISSION = [
+		{
+			statement: `Founded by a group of professionals driven by the recognition
+	of a critical need, our organization is dedicated to
+	delivering elevated standards to companies of all sizes. We
+	emerged from a shared realization that professional excellence
+	should be accessible across the spectrum of businesses. Our
+	unwavering passion extends beyond this objective; it
+	encompasses providing organizations with the necessary
+	resources to not only navigate but excel in an increasingly
+	intricate business environment.`,
+		},
+		{
+			statement: `At the core of our mission is the commitment to instill a
+		winning culture within the fabric of the organizations we
+		serve. We understand that success is not merely a destination
+		but a culture that breeds resilience, innovation, and
+		continuous improvement. While our primary focus is on
+		delivering resources for operational excellence, we firmly
+		believe that a winning culture is equally vital for sustained
+		growth and prosperity.`,
+		},
+		{
+			statement: `As we work with diverse companies, our satisfaction lies in
+		witnessing their organic growth and evolution. Beyond the
+		metrics of success, our true measure of accomplishment is
+		derived from seeing our clients navigate the complexities of
+		the business landscape and emerge knowing we have “ your back”
+		. We take pride in contributing to the professional standards
+		but also to the cultivation of an environment where success is
+		the norm. Growth is an ingrained part of the organizational
+		DNA.`,
+		},
+	];
+	const VISION = [
+		{
+			statement: `Sustainability - We believe that the best solutions are
+			sustainable. Solutions that benefit the overall health and
+			bottom line of the organization allow organizations to turn
+			around, scale and become more efficient. This structure
+			mindset can help companies provide a more stable environment
+			for owners, employees and other stakeholders.`,
+		},
+		{
+			statement: `Dedication - We also believe in dedication and continuity; we
+			believe in connections that deliver value over the long term.`,
+		},
+	];
 	return (
 		<>
 			<Box p={"3em"}>
 				<SimpleGrid
 					columns={{ base: 1, md: 3 }}
 					spacing={10}
-					maxW={"1180px"}
+					maxW={"1450px"}
 					mx={"auto"}
 				>
 					<Stack>
@@ -30,16 +78,25 @@ export default function MissionValues() {
 							textAlign={{ base: "center", md: "start" }}
 						>
 							Our Mission
-						</Heading>
-						<Text
-							fontSize={{ base: "md", lg: "lg" }}
-							textAlign={{ base: "justify", md: "start" }}
-						>
-							Founded by a group of professionals that saw a need to to deliver
-							professional standards to companies of all sizes. We have a
-							passion to give organizations resources to compete in an ever more
-							complex business environment.
-						</Text>
+						</Heading>{" "}
+						<List spacing={3}>
+							{MISSION.map(({ statement }) => (
+								<ListItem>
+									<Text
+										fontSize={{ base: "md", lg: "lg" }}
+										textAlign={{ base: "justify", md: "start" }}
+									>
+										<ListIcon
+											as={MdCheckCircle}
+											color="purple.500"
+											d="inline-flex"
+											verticalAlign={"middle"}
+										/>
+										{statement}
+									</Text>
+								</ListItem>
+							))}
+						</List>
 					</Stack>
 					<Stack>
 						<Heading
@@ -50,30 +107,22 @@ export default function MissionValues() {
 							Vision
 						</Heading>
 						<List spacing={3}>
-							<ListItem>
-								<Text
-									fontSize={{ base: "md", lg: "lg" }}
-									textAlign={{ base: "justify", md: "start" }}
-								>
-									<ListIcon as={MdCheckCircle} color="purple.500" />
-									Sustainability - We believe that the best solutions are
-									sustainable. Solutions that benefit the overall health and
-									bottom line of the organization allow organizations to turn
-									around, scale and become more efficient. This structure
-									mindset can help companies provide a more stable environment
-									for owners, employees and other stakeholders.
-								</Text>
-							</ListItem>
-							<ListItem>
-								<Text
-									fontSize={{ base: "md", lg: "lg" }}
-									textAlign={{ base: "justify", md: "start" }}
-								>
-									<ListIcon as={MdCheckCircle} color="purple.500" />
-									Dedication - We also believe in dedication and continuity; we
-									believe in connections that deliver value over the long term.
-								</Text>
-							</ListItem>
+							{VISION.map(({ statement }) => (
+								<ListItem>
+									<Text
+										fontSize={{ base: "md", lg: "lg" }}
+										textAlign={{ base: "justify", md: "start" }}
+									>
+										<ListIcon
+											as={MdCheckCircle}
+											color="purple.500"
+											d="inline-flex"
+											verticalAlign={"middle"}
+										/>
+										{statement}
+									</Text>
+								</ListItem>
+							))}
 						</List>
 					</Stack>
 					<Stack>
