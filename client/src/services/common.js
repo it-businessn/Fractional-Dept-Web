@@ -16,6 +16,7 @@ export const useBreakpointValue = () => {
 		isIpad,
 	};
 };
+
 export const isMobileView = () => window.innerWidth <= 767;
 
 export const isTabletView = () =>

@@ -44,8 +44,7 @@ export default function About() {
 							<Text fontSize={{ base: "sm", md: "xl" }}>
 								Our founders recognized a need for affordable implementation of
 								best practices in key roles. We aim to be the trusted source for
-								small businesses, providing fractional controllers and
-								bookkeepers.
+								fractional roles.
 							</Text>
 							<Text fontSize={{ base: "sm", md: "xl" }}>
 								Our mission is to empower small businesses with top-notch admin

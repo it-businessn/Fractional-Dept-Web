@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const BASE_URL_LOCAL = "http://localhost:5000/api";
-const BASE_URL_LIVE = "https://fractional-dept-web.onrender.com/api";
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const API = axios.create({
-	baseURL: BASE_URL_LIVE,
+	baseURL: BASE_URL,
 });

@@ -12,7 +12,6 @@ const RoundedCard = ({ data, isTab }) => {
 			rounded="lg"
 			borderRadius={"28px"}
 			boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
-			bg="brand.700"
 			mb={"1em"}
 			transition={"transform 0.3s box-shadow 0.3s"}
 			_hover={{
@@ -28,7 +27,10 @@ const RoundedCard = ({ data, isTab }) => {
 				borderTopRightRadius={"28px"}
 				mb="4"
 				width="100%"
-				height="15em"
+				height="13em"
+				// boxShadow="0 4px 8px rgba(0, 0, 0, 0.25)"
+				borderBottomLeftRadius={"50px"}
+				borderBottomRightRadius={"50px"}
 			/>
 
 			<Box p="4">
