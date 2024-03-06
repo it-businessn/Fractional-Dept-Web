@@ -29,8 +29,8 @@ const RoundedCard = ({ data, isTab }) => {
 				width="100%"
 				height="13em"
 				// boxShadow="0 4px 8px rgba(0, 0, 0, 0.25)"
-				borderBottomLeftRadius={"50px"}
-				borderBottomRightRadius={"50px"}
+				borderBottomLeftRadius={{ md: "50px" }}
+				borderBottomRightRadius={{ md: "50px" }}
 			/>
 
 			<Box p="4">

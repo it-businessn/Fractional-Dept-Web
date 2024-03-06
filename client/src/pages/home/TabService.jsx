@@ -8,7 +8,8 @@ export default function TabService() {
 			<SimpleGrid
 				columns={{ base: 1, md: 2, lg: 3 }}
 				spacing={"2.5em"}
-				mx={{ lg: "12em" }}
+				maxWidth={"1280px"}
+				m={"0 auto "}
 			>
 				{TABS.map((item) => (
 					<RoundedCard isTab key={`service-${item.id}`} data={item} />
