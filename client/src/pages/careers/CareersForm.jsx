@@ -10,7 +10,7 @@ import {
 	Text,
 	VStack,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as api from "../../services";
 
 export default function CareersForm({ onClose, setMessage }) {
@@ -21,47 +21,6 @@ export default function CareersForm({ onClose, setMessage }) {
 		resume: null,
 	});
 	const [submitting, setSubmitting] = useState(false);
-	const [resumes, setResumes] = useState();
-	useEffect(() => {
-		const fetchResumes = async () => {
-			try {
-				const response = await api.getResumes();
-				// const blob = await response.blob();
-
-				// Create Object URL from Blob
-				// const imageUrl = URL.createObjectURL(response);
-
-				// setImageSrc(imageUrl);
-				const paragraph = document.createElement("p");
-
-				// Set the background image style for the paragraph
-				paragraph.style.backgroundImage = response;
-				paragraph.style.backgroundSize = "cover";
-				paragraph.style.width = "300px"; // Set the width as needed
-				paragraph.style.height = "200px"; // Set the height as needed
-				const galleryContainer = document.querySelector("#me");
-				galleryContainer.appendChild(paragraph);
-				// document.createElement("<p>").style.backgroundImage = response;
-				// console.log(await response.arraybuffer());
-				// Convert ArrayBuffer to Blob
-				// const blob = new Blob([arrayBuffer], { type: "image/jpeg" });
-
-				// Create Object URL from Blob
-				// const imageUrl = URL.createObjectURL(blob);
-				// setResumes(imageUrl);
-
-				// setResumes(response);
-
-				// const blob = await response.blob();
-				// const imageUrl = URL.createObjectURL(blob);
-				setResumes(response);
-			} catch (error) {
-				console.error(error);
-			}
-		};
-		fetchResumes();
-	}, []);
-
 	const handleInputChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
@@ -81,7 +40,7 @@ export default function CareersForm({ onClose, setMessage }) {
 		data.append("resume", formData.resume);
 
 		try {
-			const response = await api.addResume(data);
+			const response = await api.uploadResume(data);
 
 			setMessage(response.data.message);
 			onClose();

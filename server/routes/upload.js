@@ -1,54 +1,64 @@
 const express = require("express");
-const router = express.Router();
-const ResumeUpload = require("../models/ResumeUpload");
+const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
-const fs = require("fs");
+const ResumeUpload = require("../models/ResumeUpload");
+const router = express.Router();
 
 const axios = require("axios");
+const { sendEmail } = require("../controller/emailController");
 const storage = multer.diskStorage({
 	destination(req, file, cb) {
 		cb(null, "uploads/");
 	},
 	filename(req, file, cb) {
-		cb(
-			null,
-			`${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`,
-		);
+		const uniqueFileName = file.originalname;
+
+		cb(null, uniqueFileName);
 	},
 });
-const upload = multer({ storage });
-router.get("/", async (req, res) => {
-	try {
-		const response = await axios.get(
-			`https://drive.google.com/uc?id=1mCwLSw5QEVrP4617U-ZNbv5yEAHufqoj`,
-			{
-				responseType: "arraybuffer",
-			},
-		);
-		res.writeHead(200, { "Content-Type": "image/jpeg" });
-		res.end(Buffer.from(response.data, "binary"));
 
-		// const resumes = (await ResumeUpload.find()).sort((a, b) => b.date - a.date);
-		// res.status(200).json(response);
+const upload = multer({ storage });
+
+router.get("/", async (req, res) => {
+	const { fileType } = req.params;
+	try {
+		const files = (await ResumeUpload.find({ fileType })).sort(
+			(a, b) => b.uploadedOn - a.uploadedOn,
+		);
+		res.status(200).json(files);
 	} catch (error) {
 		res.status(404).json({ error: error.message });
 	}
 });
 
-router.post("/", upload.single("resume"), async (req, res) => {
-	const { name, email, phoneNumber, resume } = req.body;
-	const { originalname, path } = req.file;
+router.post("/upload", upload.single("resume"), async (req, res) => {
+	const { name, email, phoneNumber } = req.body;
+	const { originalname, path, mimetype } = req.file;
 
-	const newResume = new ResumeUpload({
-		name,
-		email,
-		phoneNumber,
-		resumePath: path,
-		date: Date.now(),
-	});
 	try {
+		const newResume = new ResumeUpload({
+			name,
+			phoneNumber,
+			email,
+			file: {
+				data: fs.readFileSync(path),
+				contentType: mimetype,
+				path,
+			},
+			originalname,
+			uploadedBy: email,
+		});
+
 		const resume = await newResume.save();
+		const attachments = [
+			{
+				filename: resume.originalname,
+				content: fs.createReadStream(resume.file.path),
+			},
+		];
+
+		sendEmail(attachments, name, phoneNumber, email, resume.uploadedOn);
 		res
 			.status(201)
 			.json({ resume, message: "Application submitted successfully!" });
@@ -56,4 +66,5 @@ router.post("/", upload.single("resume"), async (req, res) => {
 		res.status(400).json({ message: error.message });
 	}
 });
+
 module.exports = router;
