@@ -51,14 +51,16 @@ router.post("/upload", upload.single("resume"), async (req, res) => {
 		});
 
 		const resume = await newResume.save();
-		const attachments = [
-			{
-				filename: resume.originalname,
-				content: fs.createReadStream(resume.file.path),
-			},
-		];
+		if (resume) {
+			const attachments = [
+				{
+					filename: resume.originalname,
+					content: fs.createReadStream(resume.file.path),
+				},
+			];
 
-		sendEmail(attachments, name, phoneNumber, email, resume.uploadedOn);
+			sendEmail(attachments, name, phoneNumber, email, resume.uploadedOn);
+		}
 		res
 			.status(201)
 			.json({ resume, message: "Application submitted successfully!" });

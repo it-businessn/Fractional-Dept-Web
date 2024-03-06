@@ -20,11 +20,11 @@ exports.sendEmail = async (
 	const mailOptions = {
 		from: "julik@businessn.com",
 		to: "julik@businessn.com",
-		cc: [
-			"davidd@businessn.com",
-			// "andrew.dehkurdi@fractionaldepartments.com",
-			// "erwan@fractionaldepartments.com",
-		],
+		// cc: [
+		// 	"davidd@businessn.com",
+		// 	// "andrew.dehkurdi@fractionaldepartments.com",
+		// 	// "erwan@fractionaldepartments.com",
+		// ],
 		subject:
 			"New File Upload Notification from https://fractionaldepartments.com/",
 		text: "A file has been uploaded. Check the attachment.",
