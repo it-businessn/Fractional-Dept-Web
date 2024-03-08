@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const uploadRoutes = require("./routes/upload");
 const emailRoutes = require("./routes/email");
+const getStartedEmailRoutes = require("./routes/getStartedEmail");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,6 +26,7 @@ app.use("/uploads", express.static("uploads"));
 
 app.use("/api/resumes", uploadRoutes);
 app.use("/api/send-email", emailRoutes);
+app.use("/api/get-started-email", getStartedEmailRoutes);
 
 mongoose.connect(process.env.DB_CONNECTION_URL_LOCAL_CRM, {
 	useNewUrlParser: true,

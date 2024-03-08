@@ -2,7 +2,6 @@
 
 import {
 	Button,
-	Center,
 	Flex,
 	HStack,
 	Heading,
@@ -201,30 +200,7 @@ export default function MoreFeatures() {
 				<ModalContent>
 					<ModalCloseButton />
 					<ModalBody p={"2em"}>
-						<GetStartedForm />
-						<Center>
-							<Stack
-								direction={{
-									base: "column",
-									md: "row",
-								}}
-							>
-								<Button
-									fontSize={"xs"}
-									display={{
-										base: "flex",
-										md: "inline-flex",
-									}}
-									bg={"brand.200"}
-									color={"brand.300"}
-									textTransform="uppercase"
-									p={"1em"}
-									onClick={onClose}
-								>
-									Send
-								</Button>
-							</Stack>
-						</Center>
+						<GetStartedForm onClose={onClose} />
 					</ModalBody>
 				</ModalContent>
 			</Modal>
