@@ -61,12 +61,12 @@ router.post("/", async (req, res) => {
 		},
 	});
 	const mailOptions = {
-		from: "julik@businessn.com",
-		to: "julik@businessn.com",
+		from: process.env.NODEMAILER_ZOHO_SMTP_USER_EMAIL,
+		to: process.env.NODEMAILER_EMAIL_TO,
 		cc: [
-			"davidd@businessn.com",
-			"andrew.dehkurdi@fractionaldepartments.com",
-			"erwan@fractionaldepartments.com",
+			process.env.NODEMAILER_EMAIL_CC_1,
+			process.env.NODEMAILER_EMAIL_CC_2,
+			process.env.NODEMAILER_EMAIL_CC_3,
 		],
 		subject:
 			"New Contact Form Submission from https://fractionaldepartments.com/",

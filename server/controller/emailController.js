@@ -18,13 +18,9 @@ exports.sendEmail = async (
 	uploadedOn,
 ) => {
 	const mailOptions = {
-		from: "julik@businessn.com",
-		to: "julik@businessn.com",
-		cc: [
-			"davidd@businessn.com",
-			// "andrew.dehkurdi@fractionaldepartments.com",
-			// "erwan@fractionaldepartments.com",
-		],
+		from: process.env.NODEMAILER_ZOHO_SMTP_USER_EMAIL,
+		to: process.env.NODEMAILER_EMAIL_TO,
+		cc: [process.env.NODEMAILER_EMAIL_CC_1],
 		subject:
 			"New File Upload Notification from https://fractionaldepartments.com/",
 		text: "A file has been uploaded. Check the attachment.",
@@ -82,12 +78,12 @@ exports.sendGetStartedEmail = async (
 	interests,
 ) => {
 	const mailOptions = {
-		from: "julik@businessn.com",
-		to: "julik@businessn.com",
+		from: process.env.NODEMAILER_ZOHO_SMTP_USER_EMAIL,
+		to: process.env.NODEMAILER_EMAIL_TO,
 		cc: [
-			"davidd@businessn.com",
-			// "andrew.dehkurdi@fractionaldepartments.com",
-			// "erwan@fractionaldepartments.com",
+			process.env.NODEMAILER_EMAIL_CC_1,
+			process.env.NODEMAILER_EMAIL_CC_2,
+			process.env.NODEMAILER_EMAIL_CC_3,
 		],
 		subject: "New Form Submission from https://fractionaldepartments.com/",
 		text: "We have received a new inquiry from a potential customer. Here are the details",
