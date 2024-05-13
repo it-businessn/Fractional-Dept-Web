@@ -1,52 +1,44 @@
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex, HStack, Heading, Image, Stack } from "@chakra-ui/react";
 import React from "react";
-import homeCover from "../../assets/homeCover.mp4";
+import homeCoverImg from "../../assets/homeCoverImg.png";
+import ResponsiveText from "../../components/ResponsiveText";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
+import TertiaryButton from "../../components/buttons/TertiaryButton";
 import "./Hero.css";
 
 const Hero = () => {
 	return (
-		<Box position="relative">
-			<video autoPlay muted loop className="cover-video">
-				<source src={homeCover} type="video/mp4" />
-				Your browser does not support the video tag.
-			</video>
+		<Stack
+			m={{ base: "0 2em", md: "2em auto" }}
+			maxW={"1250px"}
+			direction={{ base: "column", md: "row" }}
+		>
+			<Flex flex={1} align={"center"} justify={"center"}>
+				<Stack spacing={6} w={{ base: "90%", md: "70%" }} px={"1em"} pt={"1em"}>
+					<Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+						Write your own script
+					</Heading>
+					<ResponsiveText
+						text={
+							"Our fractional services help you reach your goals- whether that’s more time to spend with family or grow profits. We partner with you to bring best practices to your organization"
+						}
+					/>
 
-			<Box
-				color={"brand.100"}
-				position="absolute"
-				top={{ base: "4em", md: "9.25em", lg: "6em" }}
-				left={{ base: 0, lg: "2em" }}
-				width={{ base: "100vw", lg: "20%" }}
-				height="80%"
-				backgroundColor="rgba(0, 0, 0, 0.25)"
-				display="flex"
-				justifyContent="center"
-				alignItems="center"
-			>
-				<VStack spacing={3}>
-					<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-						OUR SUPERSTAR
-					</Heading>
-					<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-						TEAM MEMBERS
-					</Heading>
-					<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-						WILL HELP YOU
-					</Heading>
-					<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-						DRIVE GROWTH
-					</Heading>
-					<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-						SUSTAINABLY
-					</Heading>
-					<VStack mt={5}>
-						<Text fontSize="lg">No recruitment fees.</Text>
-						<Text fontSize="lg"> Start Right Away.</Text>
-						<Text fontSize="lg"> Cancel Anytime.</Text>
-					</VStack>
-				</VStack>
-			</Box>
-		</Box>
+					<HStack>
+						<PrimaryButton title="Learn more" />
+						<TertiaryButton title="See work" />
+					</HStack>
+				</Stack>
+			</Flex>
+			<Flex flex={1} pr={{ base: 0, md: "2em" }} pt={{ base: 0, md: "3em" }}>
+				<Image
+					alt={"Login Image"}
+					objectFit={"cover"}
+					borderRadius={"28px"}
+					src={homeCoverImg}
+				/>
+			</Flex>
+		</Stack>
 	);
 };
 

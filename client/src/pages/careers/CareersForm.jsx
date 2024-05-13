@@ -1,5 +1,4 @@
 import {
-	Button,
 	Center,
 	Container,
 	FormControl,
@@ -11,6 +10,7 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
 import * as api from "../../services";
 
 export default function CareersForm({ onClose, setMessage }) {
@@ -106,22 +106,12 @@ export default function CareersForm({ onClose, setMessage }) {
 									md: "row",
 								}}
 							>
-								<Button
-									fontSize={"xs"}
-									display={{
-										base: "flex",
-										md: "inline-flex",
-									}}
-									bg={"brand.200"}
-									color={"brand.300"}
-									textTransform="uppercase"
-									p={"1em"}
+								<PrimaryButton
+									title="Submit Application"
 									type="submit"
 									isLoading={submitting}
 									loadingText="Submitting"
-								>
-									Submit Application
-								</Button>
+								/>
 							</Stack>
 						</Center>
 					</form>

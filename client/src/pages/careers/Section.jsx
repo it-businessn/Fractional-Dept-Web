@@ -1,0 +1,31 @@
+import { HStack, Heading, Icon, Stack, Text } from "@chakra-ui/react";
+import { MdCheckCircle } from "react-icons/md";
+
+const Section = ({ title, text }) => {
+	return (
+		<Stack>
+			<Heading
+				color={"brand.500"}
+				fontSize={{ base: "3xl", md: "4xl" }}
+				textAlign={{
+					base: "center",
+					md: "center",
+					lg: "start",
+				}}
+			>
+				{title}
+			</Heading>
+			<HStack align={"flex-start"}>
+				<Icon as={MdCheckCircle} color="purple.500" />
+				<Text
+					fontSize={{ base: "md", md: "xl" }}
+					textAlign={{ base: "justify", md: "start" }}
+				>
+					{text}
+				</Text>
+			</HStack>
+		</Stack>
+	);
+};
+
+export default Section;

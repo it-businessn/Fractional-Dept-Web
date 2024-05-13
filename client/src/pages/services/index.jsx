@@ -55,7 +55,8 @@ export default function Services() {
 			</Heading>
 			<Text
 				fontSize={{
-					base: "3xl",
+					base: "2xl",
+					md: "3xl",
 				}}
 			>
 				{tab.heading}
@@ -81,9 +82,12 @@ export default function Services() {
 				flexDir="column"
 			>
 				<Stack spacing={6} maxW={{ lg: "1180px" }} borderRadius={32}>
-					<Stack m={"1em auto"} align="center">
+					<Stack
+						m={"1em auto"}
+						align="center"
+						w={{ base: "95%", md: "80%", lg: "full" }}
+					>
 						<Heading
-							w={{ md: "100%" }}
 							textAlign="center"
 							px={{ base: "auto", md: "auto" }}
 							fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
@@ -91,11 +95,7 @@ export default function Services() {
 							You do not need deep pockets to have a deep bench
 						</Heading>
 						<br />
-						<Text
-							w={{ base: "auto", md: "80%" }}
-							textAlign="center"
-							fontSize={{ base: "md", md: "2xl" }}
-						>
+						<Text textAlign="center" fontSize={{ base: "md", md: "xl" }}>
 							We’re here to help with your administration at a price point that
 							is right for your business now and as you grow. Feel all the
 							support without any unnecessary overhead.

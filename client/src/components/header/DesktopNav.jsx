@@ -13,7 +13,6 @@ export default function DesktopNav({ isScrolled }) {
 								<Box
 									color={isScrolled ? "brand.100" : "brand.300"}
 									fontSize={{ md: "sm", lg: "lg" }}
-									textTransform="uppercase"
 									_hover={{
 										textDecoration: "none",
 										color: "brand.300",

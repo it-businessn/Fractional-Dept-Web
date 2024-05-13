@@ -2,15 +2,26 @@
 	box-sizing: border-box;
 }
 :root {
-	overflow-x: hidden !important;
 	--active: #5a13e3;
-	--bg: #f5f8f9;
-	--default: #ffffff;
+	--bg: #f7f7f7;
 	--color: #eef2f6;
-	--primary: #0deafb;
+	--default: #ffffff;
 	--gradient1: rgba(16, 227, 218, 0.625109418767507);
 	--gradient2: rgba(40, 16, 227, 0.30017944677871145);
 	--hero_active: #edf0ff;
+	--primary: #004dff;
+	--secondary: #474747;
+	--tertiary: #010b2f;
+	--white_600: #f1f5f8;
+	--white_700: #e8e9eb;
+	--highlight: linear-gradient(
+		90deg,
+		rgba(13, 234, 251, 1) 0%,
+		rgba(40, 161, 242, 1) 25%,
+		rgba(51, 130, 240, 1) 50%,
+		rgba(81, 45, 230, 1) 100%
+	);
+	overflow-x: hidden !important;
 }
 @font-face {
 	font-family: "Material";
@@ -23,6 +34,7 @@ body {
 	display: flex;
 	margin: 0;
 	width: 100vw;
+	background: var(--bg) !important;
 }
 button,
 .partner_btn {
@@ -39,8 +51,8 @@ button,
 }
 input,
 textarea {
-	background: var(--bg) !important;
-	border: 1px solid var(--color) !important;
+	background: var(--color) !important;
+	border: 1px solid var(--bg) !important;
 	box-shadow: none !important;
 	width: 100% !important;
 }
@@ -75,7 +87,7 @@ li#downshift {
 	font-weight: bold;
 	cursor: pointer;
 	border: thin solid var(--default) !important;
-	background-color: var(--default);
+	background-color: #eee;
 	border-radius: 28px !important;
 	height: 40px;
 	font-family: inherit !important;

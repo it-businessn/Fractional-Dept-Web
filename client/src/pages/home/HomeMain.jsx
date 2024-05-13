@@ -1,13 +1,6 @@
-import {
-	Button,
-	Flex,
-	HStack,
-	Heading,
-	Stack,
-	Text,
-	VStack,
-} from "@chakra-ui/react";
+import { Flex, HStack, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
 import { useBreakpointValue } from "../../services/common";
 import AnimatedComponent from "./AnimatedComponent";
 
@@ -29,57 +22,49 @@ export default function WhoWeAre() {
 		);
 	};
 
-	const { isMobile } = useBreakpointValue();
+	const { isMobile, isIpad } = useBreakpointValue();
 
 	const mainContent = () => (
-		<>
+		<Flex alignItems={"center"}>
 			<Text
-				ml={"2em"}
-				textAlign={"center"}
-				w={"60vw"}
-				fontSize={{ base: "md", md: "2xl" }}
-				display={"flex"}
-				alignItems={"center"}
+				m={{ base: "1em", lg: "auto" }}
+				ml={!isMobile && !isIpad ? "2em" : "auto"}
+				textAlign={{ base: "justify", lg: "center" }}
+				w={{ base: "full", md: "60vw" }}
+				fontSize={{ base: "md", md: "xl" }}
 			>
 				We bring best practices to your operation by enhancing your staff with
 				one or more of our highly qualified partners in the key departments.
 			</Text>
 			<Link to="about" name="my-link">
-				<Button
-					display={"flex"}
-					alignItems={"center"}
-					fontSize={"xs"}
-					bg={"brand.200"}
-					color={"brand.300"}
-					textTransform="uppercase"
-					p={"1em"}
-					minW={"100px !important"}
-				>
-					About us
-				</Button>
+				<PrimaryButton title="About us" />
 			</Link>
-		</>
+		</Flex>
 	);
-
+	const TAGS = ["Cultivate Growth", "Inspire Culture", "Achieve Excellence"];
 	return (
 		<Stack
-			bg={{ base: "brand.600", md: "brand.100" }}
+			bg={{ base: "brand.600", md: "var(--bg)" }}
 			justifyContent="center"
 			direction={{ base: "column", lg: "row" }}
 			borderRadius={"28px"}
 		>
 			<AnimatedComponent zoomIn>
 				<VStack mx={"auto"}>
-					<HStack spacing={1} mx={{ base: "12px", md: "auto" }} mt={"2em"}>
-						<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-							Cultivate Growth.
-						</Heading>
-						<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-							Inspiring Culture.
-						</Heading>
-						<Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
-							Achieving Excellence.
-						</Heading>
+					<HStack
+						spacing={{ base: 1, md: 5, lg: 3 }}
+						mx={{ base: "12px", md: "auto" }}
+						mt={"2em"}
+					>
+						{TAGS.map((_) => (
+							<Heading
+								key={_}
+								fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+								textAlign={{ base: "center", md: "left" }}
+							>
+								{_}
+							</Heading>
+						))}
 					</HStack>
 
 					<Flex
@@ -90,44 +75,19 @@ export default function WhoWeAre() {
 						direction={{ sm: "column", lg: "row" }}
 					>
 						{isMobile ? (
-							<VStack pb={"1em"}>
-								<Text
-									m={{ base: "1em", md: "1em 2em" }}
-									fontSize={{ base: "md", md: "2xl" }}
-								>
-									We bring best practices to your operation by enhancing your
-									staff with one or more of our highly qualified partners in the
-									key departments.
-								</Text>
-								<Link to="about" name="my-link">
-									<Button
-										fontSize={"xs"}
-										display={{
-											base: "flex",
-											md: "inline-flex",
-										}}
-										bg={"brand.200"}
-										color={"brand.300"}
-										textTransform="uppercase"
-										p={"1em"}
-										minW={"100px !important"}
-									>
-										About us
-									</Button>
-								</Link>
+							<VStack pb={"1em"} w={"90%"}>
+								{mainContent()}
 
 								{/* <VimeoPlayer videoUrl={vimeoVideoUrl} /> */}
 							</VStack>
 						) : (
-							<>
-								<Flex
-									mb={"1em"}
-									justifyContent={"space-around"}
-									w={{ xl: "75vw" }}
-								>
-									{mainContent()}
-								</Flex>
-							</>
+							<Flex
+								mb={"1em"}
+								justifyContent={"space-around"}
+								w={{ xl: "75vw" }}
+							>
+								{mainContent()}
+							</Flex>
 						)}
 					</Flex>
 				</VStack>

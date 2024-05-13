@@ -12,6 +12,7 @@ import {
 	useDisclosure,
 } from "@chakra-ui/react";
 import featureBanner from "../../assets/images/banner/featured.png";
+import ResponsiveText from "../../components/ResponsiveText";
 import ServiceProfile from "./ServiceProfile";
 
 export default function Feature({
@@ -108,7 +109,7 @@ export default function Feature({
 			<Text px={"1em"} fontSize={{ base: "md", md: "lg" }} fontWeight={600}>
 				{title}
 			</Text>
-			<Text fontSize={{ base: "sm", md: "md" }}>{text}</Text>
+			{text && <ResponsiveText text={text} />}
 		</Stack>
 	);
 }

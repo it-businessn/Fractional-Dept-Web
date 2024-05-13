@@ -1,5 +1,4 @@
 import {
-	Button,
 	Center,
 	Checkbox,
 	FormControl,
@@ -13,6 +12,7 @@ import {
 	useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
 import * as api from "../../services";
 
 export default function GetStartedForm({ onClose }) {
@@ -282,21 +282,11 @@ export default function GetStartedForm({ onClose }) {
 							md: "row",
 						}}
 					>
-						<Button
-							isLoading={isSubmitting}
-							fontSize={"xs"}
-							display={{
-								base: "flex",
-								md: "inline-flex",
-							}}
-							bg={"brand.200"}
-							color={"brand.300"}
-							textTransform="uppercase"
-							px={"3em"}
+						<PrimaryButton
+							title={"Send"}
 							type="submit"
-						>
-							Send
-						</Button>
+							isLoading={isSubmitting}
+						/>
 					</Stack>
 				</Center>
 			</form>

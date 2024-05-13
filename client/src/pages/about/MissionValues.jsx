@@ -1,17 +1,7 @@
-import {
-	Box,
-	Button,
-	Center,
-	Heading,
-	List,
-	ListIcon,
-	ListItem,
-	SimpleGrid,
-	Stack,
-	Text,
-} from "@chakra-ui/react";
-import { MdCheckCircle } from "react-icons/md";
+import { Box, Center, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
+import Statement from "./Statement";
 
 export default function MissionValues() {
 	const MISSION = [
@@ -62,6 +52,31 @@ export default function MissionValues() {
 			believe in connections that deliver value over the long term.`,
 		},
 	];
+
+	const VALUES = [
+		{
+			heading: "Our Mission",
+			list: MISSION,
+		},
+		{
+			heading: "Vision",
+			list: VISION,
+		},
+		{
+			heading: "Our People",
+			content: (
+				<Text
+					fontSize={{ base: "md", lg: "lg" }}
+					textAlign={{ base: "justify", md: "start" }}
+				>
+					Our company is only as strong as the collective experience, vision and
+					know-how of each partner in the firm. We come from diverse backgrounds
+					and have played key roles in all stages of businesses – from start-ups
+					to mature businesses.
+				</Text>
+			),
+		},
+	];
 	return (
 		<>
 			<Box p={"3em"}>
@@ -71,93 +86,15 @@ export default function MissionValues() {
 					maxW={"1450px"}
 					mx={"auto"}
 				>
-					<Stack>
-						<Heading
-							color={"brand.500"}
-							fontSize={{ base: "3xl", md: "4xl" }}
-							textAlign={{ base: "center", md: "start" }}
-						>
-							Our Mission
-						</Heading>{" "}
-						<List spacing={3}>
-							{MISSION.map(({ statement }) => (
-								<ListItem>
-									<Text
-										fontSize={{ base: "md", lg: "lg" }}
-										textAlign={{ base: "justify", md: "start" }}
-									>
-										<ListIcon
-											as={MdCheckCircle}
-											color="purple.500"
-											d="inline-flex"
-											verticalAlign={"middle"}
-										/>
-										{statement}
-									</Text>
-								</ListItem>
-							))}
-						</List>
-					</Stack>
-					<Stack>
-						<Heading
-							color={"brand.500"}
-							fontSize={{ base: "3xl", md: "4xl" }}
-							textAlign={{ base: "center", md: "start" }}
-						>
-							Vision
-						</Heading>
-						<List spacing={3}>
-							{VISION.map(({ statement }) => (
-								<ListItem>
-									<Text
-										fontSize={{ base: "md", lg: "lg" }}
-										textAlign={{ base: "justify", md: "start" }}
-									>
-										<ListIcon
-											as={MdCheckCircle}
-											color="purple.500"
-											d="inline-flex"
-											verticalAlign={"middle"}
-										/>
-										{statement}
-									</Text>
-								</ListItem>
-							))}
-						</List>
-					</Stack>
-					<Stack>
-						<Heading
-							color={"brand.500"}
-							fontSize={{ base: "3xl", md: "4xl" }}
-							textAlign={{ base: "center", md: "start" }}
-						>
-							Our People
-						</Heading>
-						<Text
-							fontSize={{ base: "md", lg: "lg" }}
-							textAlign={{ base: "justify", md: "start" }}
-						>
-							Our company is only as strong as the collective experience, vision
-							and know-how of each partner in the firm. We come from diverse
-							backgrounds and have played key roles in all stages of businesses
-							– from start-ups to mature businesses.
-						</Text>
-					</Stack>
+					{VALUES.map((statement) => (
+						<Statement statement={statement} key={statement.heading} />
+					))}
 				</SimpleGrid>
 			</Box>
 			<Center pb={"2em"}>
 				<Stack direction={{ base: "column", md: "row" }}>
 					<Link to="/careers" name="my-link">
-						<Button
-							fontSize={"xs"}
-							display={{ base: "flex", md: "inline-flex" }}
-							bg={"brand.200"}
-							color={"brand.300"}
-							textTransform="uppercase"
-							p={"1em"}
-						>
-							Join our Team
-						</Button>
+						<PrimaryButton title={"Join our Team"} />
 					</Link>
 				</Stack>
 			</Center>

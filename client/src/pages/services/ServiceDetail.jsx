@@ -38,21 +38,15 @@ export default function ServiceDetail() {
 	}, [currentService]);
 
 	const showPrevTab = (tab) => (
-		<HStack>
+		<HStack spacing={0} onClick={() => navigate(`/services/${detail_id}`)}>
 			<IconButton
 				sx={{
 					color: "brand.300",
 				}}
-				onClick={() => navigate(`/services/${detail_id}`)}
 				icon={<ArrowBackIcon w={"30px"} h={"30px"} />}
 				aria-label={"Toggle Navigation"}
 			/>
-			<Button
-				cursor="pointer"
-				onClick={() => navigate(`/services/${detail_id}`)}
-				variant="link"
-				as={"a"}
-			>
+			<Button cursor="pointer" variant="ghost">
 				{tab.detail_id}
 			</Button>
 		</HStack>
@@ -106,6 +100,48 @@ export default function ServiceDetail() {
 			</List>
 		</>
 	);
+	const showPurchaseButton = () => (
+		<Flex
+			flex={1}
+			py={isMobile && 2}
+			justify="space-evenly"
+			position="sticky"
+			bottom="0"
+			color={"brand.100"}
+			background="brand.300"
+			w={"100%"}
+		>
+			<HStack spacing={5}>
+				<VStack flex={1} align="flex-start">
+					<Text
+						fontSize={{
+							base: "2xl",
+						}}
+					>
+						{service.id}
+					</Text>
+					<Text
+						fontSize={{
+							base: "2xl",
+						}}
+					>
+						${`${convertPrice(service.price, selectedCountry)} `}/ Month
+					</Text>
+				</VStack>
+
+				<Button
+					display={{
+						base: "flex",
+						md: "inline-flex",
+					}}
+					textTransform="capitalize"
+					p={"1em 2em"}
+				>
+					Buy Now
+				</Button>
+			</HStack>
+		</Flex>
+	);
 	return (
 		<>
 			{/* <Banner isServiceDetail title={"What We Offer"} /> */}
@@ -153,75 +189,12 @@ export default function ServiceDetail() {
 											borderRadius={"50% 0 0 50%"}
 											src={service.imgSrc}
 										/>
-										<Flex
-											flex={1}
-											justify="space-evenly"
-											py="2"
-											position="sticky"
-											bottom="0"
-											color={"brand.100"}
-											background="brand.300"
-											w={"100%"}
-										>
-											<HStack spacing={5}>
-												<VStack flex={1} align="flex-start">
-													<Text
-														fontSize={{
-															base: "2xl",
-														}}
-													>
-														{service.id}
-													</Text>
-													<Text
-														fontSize={{
-															base: "2xl",
-														}}
-													>
-														$
-														{`${convertPrice(service.price, selectedCountry)} `}
-														/ Month
-													</Text>
-												</VStack>
 
-												<Button colorScheme="teal">Buy Now</Button>
-											</HStack>
-										</Flex>
+										{showPurchaseButton()}
 									</VStack>
 								</HStack>
 							)}
-							{isMobile && (
-								<Flex
-									flex={1}
-									justify="space-evenly"
-									position="sticky"
-									bottom="0"
-									color={"brand.100"}
-									background="brand.300"
-									w={"100%"}
-								>
-									<HStack spacing={5}>
-										<VStack flex={1} align="flex-start">
-											<Text
-												fontSize={{
-													base: "2xl",
-												}}
-											>
-												{service.id}
-											</Text>
-											<Text
-												fontSize={{
-													base: "2xl",
-												}}
-											>
-												${`${convertPrice(service.price, selectedCountry)} `}/
-												Month
-											</Text>
-										</VStack>
-
-										<Button colorScheme="teal">Buy Now</Button>
-									</HStack>
-								</Flex>
-							)}
+							{isMobile && showPurchaseButton()}
 						</Stack>
 					</Stack>
 				)}

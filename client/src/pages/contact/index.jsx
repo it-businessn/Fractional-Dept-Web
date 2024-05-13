@@ -1,7 +1,6 @@
 import { EmailIcon } from "@chakra-ui/icons";
 import {
 	Box,
-	Button,
 	Center,
 	FormControl,
 	FormHelperText,
@@ -20,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
 import { COMPANY_BIO } from "../../constant";
 import * as api from "../../services";
 import AnimatedComponent from "../home/AnimatedComponent";
@@ -31,6 +31,11 @@ export default function Contact() {
 	}, []);
 	const form = useRef();
 	const toast = useToast();
+
+	const ACTION = [
+		{ icon: BiSolidPhoneCall, title: COMPANY_BIO.PHONE },
+		{ icon: EmailIcon, title: COMPANY_BIO.EMAIL },
+	];
 
 	const defaultForm = {
 		name: "",
@@ -191,23 +196,11 @@ export default function Contact() {
 							</FormControl>
 							<Center>
 								<Stack direction={{ base: "column", md: "row" }}>
-									<Button
-										type="submit"
-										fontSize={"xs"}
-										display={{
-											base: "flex",
-											md: "inline-flex",
-										}}
-										bg={"brand.200"}
-										color={"brand.300"}
-										textTransform="uppercase"
-										p={"1em"}
-										minW={"100px !important"}
+									<PrimaryButton
+										title="Submit"
 										isLoading={isLoading}
 										isDisabled={!isFormDataFilled}
-									>
-										Submit
-									</Button>
+									/>
 								</Stack>
 							</Center>
 						</form>
@@ -219,21 +212,16 @@ export default function Contact() {
 				<Box p={4}>
 					<SimpleGrid
 						columns={{ base: 1, md: 2 }}
-						spacing={10}
-						p={{ md: "2em" }}
+						spacing={{ base: 0, md: 10 }}
+						p={{ base: 0, md: "2em" }}
 					>
-						<Feature
-							icon={
-								<Icon color={"brand.200"} as={BiSolidPhoneCall} w={10} h={10} />
-							}
-							title={COMPANY_BIO.PHONE}
-							text={""}
-						/>
-						<Feature
-							icon={<Icon color={"brand.200"} as={EmailIcon} w={10} h={10} />}
-							title={COMPANY_BIO.EMAIL}
-							text={""}
-						/>
+						{ACTION.map(({ icon, title }) => (
+							<Feature
+								key={title}
+								icon={<Icon color={"brand.200"} as={icon} w={10} h={10} />}
+								title={title}
+							/>
+						))}
 					</SimpleGrid>
 				</Box>
 			</AnimatedComponent>

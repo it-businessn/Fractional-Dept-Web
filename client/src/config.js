@@ -1,24 +1,24 @@
 import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
-  colors: {
-    brand: {
-      100: "#ffffff",
-      200: "#0deafb",
-      300: "#010b2f",
-      500: "#5a13e3",
-      600: "#f1f5f8",
-      700: "#e8e9eb",
-    },
-  },
-  fonts: {
-    heading: `'Material', sans-serif`,
-    body: `'Material', sans-serif`,
-  },
+	colors: {
+		brand: {
+			100: "var(--default)",
+			200: "var(--primary)",
+			300: "var(--secondary)",
+			500: "var(--active)",
+			600: "var(--white_600)",
+			700: "var(--white_700)",
+		},
+	},
+	fonts: {
+		heading: `'Material', sans-serif`,
+		body: `'Material', sans-serif`,
+	},
 });
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_ytct8n2",
-  TEMPLATE_ID: "template_7yxltvm",
-  KEY: "f2Z55x8OF7tzHjaEG",
+	SERVICE_ID: "service_ytct8n2",
+	TEMPLATE_ID: "template_7yxltvm",
+	KEY: "f2Z55x8OF7tzHjaEG",
 };

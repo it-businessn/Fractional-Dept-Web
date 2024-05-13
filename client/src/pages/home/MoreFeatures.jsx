@@ -1,31 +1,35 @@
 "use client";
 
 import {
-	Button,
-	Flex,
-	HStack,
-	Heading,
-	Image,
-	List,
-	ListIcon,
-	ListItem,
 	Modal,
 	ModalBody,
 	ModalCloseButton,
 	ModalContent,
 	ModalOverlay,
 	Stack,
-	Text,
 	useDisclosure,
 } from "@chakra-ui/react";
-import { MdCheckBox } from "react-icons/md";
 import call from "../../assets/images/moreinfo/call.png";
 import meeting from "../../assets/images/moreinfo/meeting.jpg";
-import { MORE_FEATURES } from "../../constant";
+import FeatureItem from "./FeatureItem";
 import GetStartedForm from "./GetStartedForm";
 
 export default function MoreFeatures() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const FEATURES = [
+		{
+			src: meeting,
+			id: "meeting",
+			sub1: "Partner with us to take your business to the",
+			sub2: "next level",
+		},
+		{
+			src: call,
+			id: "call",
+			sub1: "Let us do the heavy lifting,",
+			sub2: "focus on execution",
+		},
+	];
 	return (
 		<>
 			<Stack
@@ -36,164 +40,17 @@ export default function MoreFeatures() {
 				direction={{ base: "column", md: "column" }}
 				position={"relative"}
 			>
-				<Flex flexDir={{ base: "column", md: "row" }}>
-					<Flex flex={1}>
-						<Image
-							boxSize={{ base: "100%", md: "70%" }}
-							alt={"Login Image"}
-							mt={{ base: "0", md: "6em" }}
-							ml={{ base: "0", md: "7em" }}
-							objectFit={"cover"}
-							src={meeting}
-							borderRadius={"28px"}
-						/>
-					</Flex>
-					<Flex p={8} pb={0} flex={1} align={"center"} justify={"center"}>
-						<Stack
-							spacing={6}
-							w={"full"}
-							maxW={"md"}
-							ml={{ base: "0", lg: "-9em" }}
-						>
-							<Heading fontSize={{ base: "3xl", md: "4xl", lg: "4xl" }}>
-								Partner with us to take your business to the
-								<Text
-									as={"span"}
-									position={"relative"}
-									_after={{
-										content: "''",
-										width: "full",
-										height: "20%",
-										position: "absolute",
-										bottom: 1,
-										left: 0,
-										bg: "linear-gradient(90deg, rgba(13,234,251,1) 0%, rgba(40,161,242,1) 25%, rgba(51,130,240,1) 50%, rgba(81,45,230,1) 100%)",
-									}}
-								>
-									next level
-								</Text>
-							</Heading>
-							<List spacing={3}>
-								{MORE_FEATURES.meeting.map((item) => (
-									<ListItem key={item}>
-										<HStack align={"center"} justify={"flex-start"}>
-											<ListIcon
-												as={MdCheckBox}
-												w={"2em"}
-												h={"2em"}
-												color="brand.300"
-											/>
-											<Text
-												fontSize={{
-													base: "sm",
-													md: "xl",
-												}}
-												fontWeight={"bold"}
-											>
-												{item.item}
-											</Text>
-										</HStack>
-									</ListItem>
-								))}
-							</List>
-							<Stack direction={{ base: "column", md: "row" }}>
-								<Button
-									fontSize={"xs"}
-									onClick={onOpen}
-									display={{
-										base: "flex",
-										md: "inline-flex",
-									}}
-									bg={"brand.200"}
-									color={"brand.300"}
-									textTransform="uppercase"
-									p={"1em"}
-								>
-									Get Started
-								</Button>
-							</Stack>
-						</Stack>
-					</Flex>
-				</Flex>
-				<Flex py={8} flexDir={{ base: "column", md: "row" }}>
-					<Flex flex={1}>
-						<Image
-							boxSize={{ base: "100%", md: "70%" }}
-							alt={"Login Image"}
-							mt={{ base: "0", md: "6em" }}
-							ml={{ base: "0", md: "7em" }}
-							objectFit={"cover"}
-							src={call}
-							borderRadius={"28px"}
-						/>
-					</Flex>
-					<Flex p={8} pb={0} flex={1} align={"center"} justify={"center"}>
-						<Stack
-							spacing={6}
-							w={"full"}
-							maxW={"md"}
-							ml={{ base: "0", lg: "-9em" }}
-						>
-							<Heading fontSize={{ base: "3xl", md: "4xl", lg: "4xl" }}>
-								Let us do the heavy lifting,&nbsp;
-								<Text
-									as={"span"}
-									position={"relative"}
-									_after={{
-										content: "''",
-										width: "full",
-										height: "20%",
-										position: "absolute",
-										bottom: 1,
-										left: 0,
-										bg: "linear-gradient(90deg, rgba(13,234,251,1) 0%, rgba(40,161,242,1) 25%, rgba(51,130,240,1) 50%, rgba(81,45,230,1) 100%)",
-									}}
-								>
-									focus on execution
-								</Text>
-							</Heading>
-							<List spacing={3}>
-								{MORE_FEATURES.call.map((item) => (
-									<ListItem key={item}>
-										<HStack align={"center"} justify={"flex-start"}>
-											<ListIcon
-												as={MdCheckBox}
-												w={"2em"}
-												h={"2em"}
-												color="brand.300"
-											/>
-											<Text
-												fontSize={{
-													base: "sm",
-													md: "xl",
-												}}
-												fontWeight={"bold"}
-											>
-												{item.item}
-											</Text>
-										</HStack>
-									</ListItem>
-								))}
-							</List>
-							<Stack direction={{ base: "column", md: "row" }}>
-								<Button
-									fontSize={"xs"}
-									onClick={onOpen}
-									display={{
-										base: "flex",
-										md: "inline-flex",
-									}}
-									bg={"brand.200"}
-									color={"brand.300"}
-									textTransform="uppercase"
-									p={"1em"}
-								>
-									Get Started
-								</Button>
-							</Stack>
-						</Stack>
-					</Flex>
-				</Flex>
+				{FEATURES.map(({ id, src, sub1, sub2 }) => (
+					<FeatureItem
+						py={id === "call" && 8}
+						key={id}
+						src={src}
+						sub1={sub1}
+						sub2={sub2}
+						id={id}
+						onClick={onOpen}
+					/>
+				))}
 			</Stack>
 			<Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
 				<ModalOverlay />

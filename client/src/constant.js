@@ -54,7 +54,7 @@ export const TABS = [
 		heading: "Accounting",
 		imgSrc: accounting,
 		subheading:
-			"Build out your accounting team with dedicated individuals who excel as team players, facilitating precision and efficiency in financial record keeping and management tasks. Our meticulous work goes beyond just the numbers, providing critical support for your business.",
+			"Build out your accounting team with dedicated individuals who excel as team players, facilitating precision and efficiency in financial record keeping and management tasks.",
 		jobTitle: ["CFO", "Controller", "Bookkeeper"],
 		buttonText: "Learn more about our Accounting solutions",
 	},
@@ -63,7 +63,7 @@ export const TABS = [
 		heading: "Information Technology",
 		imgSrc: infoTech,
 		subheading:
-			"Elevate your information technology department by enlisting adept team players who will be dedicated to enabling responsive problem solving, swift adaptation and resilience playing a crucial role in maintaining the reliability of the business's digital systems and tech tools.",
+			"Elevate your information technology department by enlisting adept team players who will be dedicated to enabling responsive problem solving, swift adaptation and resilience.",
 		jobTitle: [
 			"Automations Specialist",
 			"Web Developer",
@@ -77,7 +77,7 @@ export const TABS = [
 		heading: "Marketing",
 		imgSrc: marketing,
 		subheading:
-			"Strengthen your marketing department with committed team players at its core, ensuring seamless operations and optimal performance in your promotional efforts.  Build a positive brand image, attract and retain profitable customers, ultimately contributing to your success in competitive markets.",
+			"Strengthen your marketing department with committed team players at its core, ensuring seamless operations and optimal performance in your promotional efforts.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
 	},
@@ -86,7 +86,7 @@ export const TABS = [
 		heading: "AI",
 		imgSrc: ai,
 		subheading:
-			"Embrace AI's transformative potential with our expert team of AI, data, and decision scientists. We specialize in identifying opportunities to enhance and optimize your business processes, ensuring cost-effectiveness and efficiency. Let us guide you toward unlocking new possibilities for success.",
+			"Embrace AI's transformative potential with our expert team of AI, data, and decision scientists. We specialize in identifying opportunities to enhance and optimize your business processes, ensuring cost-effectiveness and efficiency.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
 	},
@@ -95,7 +95,7 @@ export const TABS = [
 		heading: "HR",
 		imgSrc: hr,
 		subheading:
-			"As your dedicated HR partner, we focus on simplifying tasks, fostering a positive workplace culture, and enhancing talent management. Our efficient team contributes to increased productivity and employee satisfaction, handling everything from recruitment to conflict resolution to ensure your workforce thrives.",
+			"As your dedicated HR partner, we focus on simplifying tasks, fostering a positive workplace culture, and enhancing talent management.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
 	},
@@ -104,7 +104,7 @@ export const TABS = [
 		heading: "Payroll Administration",
 		imgSrc: payroll,
 		subheading:
-			"Our  Administrator  ensures accurate and timely payments for your employees, handling tax deductions, and maintaining precise records. Our Payroll Administrators bring attention to detail, knowledge of regulations, and effective communication, adapting to changes and ensuring seamless compliance with industry trends for worry-free payroll management.",
+			"Our  Administrator  ensures accurate and timely payments for your employees, handling tax deductions, and maintaining precise records.",
 		jobTitle: ["Payroll Administrator", "HR Manager"],
 		buttonText: "Learn more about our Payroll & HR solutions",
 	},
@@ -256,7 +256,7 @@ export const SERVICE_TABS = [
 				details:
 					"Marketing Managers are responsible for developing and executing marketing strategies to promote products or services and drive revenue growth.",
 				subheading:
-					"Amplify your brand's impact with our Marketing Manager service: strategic campaigns, market insights, and effective brand positioning. Elevate your marketing approach",
+					"Amplify your brand's impact with our Marketing Manager service: strategic campaigns, market insights, and effective brand positioning.",
 			},
 			{
 				detail_id: "Marketing",
@@ -288,7 +288,7 @@ export const SERVICE_TABS = [
 				details:
 					"Content Strategists are responsible for planning, creating, and managing content to support marketing and communication goals.",
 				subheading:
-					"Take your brand narrative to the next level with our Content Strategist service: compelling storytelling, audience engagement, and effective content planning. Transform your approach to content creation",
+					"Take your brand narrative to the next level with our Content Strategist service: compelling storytelling, audience engagement, and effective content planning.",
 			},
 
 			{
@@ -321,7 +321,7 @@ export const SERVICE_TABS = [
 				details:
 					"Social Media Managers are responsible for managing an organization's presence on social media platforms to build brand awareness and engage with customers.",
 				subheading:
-					"Boost your brand presence with our Social Media Manager service: strategic campaigns, audience engagement, and effective social media planning. Elevate your social media strategy.",
+					"Boost your brand presence with our Social Media Manager service: strategic campaigns, audience engagement, and effective social media planning.",
 			},
 		],
 	},

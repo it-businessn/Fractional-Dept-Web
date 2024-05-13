@@ -9,6 +9,7 @@ const RoundedCard = ({ data, isTab }) => {
 
 	return (
 		<Box
+			bg={"var(--default)"}
 			rounded="lg"
 			borderRadius={"28px"}
 			boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
@@ -39,7 +40,8 @@ const RoundedCard = ({ data, isTab }) => {
 				</Text>
 				<Text
 					fontSize="md"
-					height={{ base: "auto", md: isTab ? "11em" : "6em" }}
+					height={{ base: "auto", md: isTab ? "8em" : "6em" }}
+					textAlign={{ base: "justify", md: "left" }}
 				>
 					{subheading}
 				</Text>
@@ -62,6 +64,8 @@ const RoundedCard = ({ data, isTab }) => {
 					mt="1em"
 					bg={"brand.300"}
 					color={"brand.100"}
+					fontWeight={"normal"}
+					_hover={{ color: "brand.100" }}
 					borderRadius={"28px"}
 				>
 					{price ? "Service Details" : "Discover more"}

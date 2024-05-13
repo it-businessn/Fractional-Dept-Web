@@ -9,7 +9,7 @@ export default function TabService() {
 				columns={{ base: 1, md: 2, lg: 3 }}
 				spacing={"2.5em"}
 				maxWidth={"1280px"}
-				m={"0 auto "}
+				m={"0 auto"}
 			>
 				{TABS.map((item) => (
 					<RoundedCard isTab key={`service-${item.id}`} data={item} />

@@ -1,7 +1,6 @@
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
 	Box,
-	Button,
 	Collapse,
 	Flex,
 	IconButton,
@@ -16,6 +15,8 @@ import { Link, useLocation } from "react-router-dom";
 import blue_logo from "../../assets/logo_blue.png";
 import logo from "../../assets/logo_white.png";
 import { COMPANY_BIO } from "../../constant";
+import PrimaryButton from "../buttons/PrimaryButton";
+import SecondaryButton from "../buttons/SecondaryButton";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
@@ -58,19 +59,14 @@ export default function Header() {
 	return (
 		<Box
 			minW={"100vw"}
-			bg={`linear-gradient(to right, rgba(232, 233, 235)  ${scrollPercentage}%, rgba(255, 255, 255, 0.5) ${scrollPercentage}%)`}
+			bg={"var(--bg)"}
 			transition="background 0.1s ease-in-out"
-
-			// bg={isScrolled ? "brand.300" : "rgba(255, 255, 255, 0.)"}
-			// transition="background-color 5s ease-in-out"
 		>
 			<link rel="preload" href={blue_logo} as="image" />
 			<Flex
 				minH={"70px"}
-				bg={`linear-gradient(to right, rgba(232, 233, 235)${scrollPercentage}%, rgba(255, 255, 255, 0.5) ${scrollPercentage}%)`}
+				bg={`linear-gradient(to right, rgba(242, 242, 242) ${scrollPercentage}%, rgba(255, 255, 255, 0.5) ${scrollPercentage}%)`}
 				transition="background 0.1s ease-in-out"
-				// bg={isScrolled ? "brand.300" : "rgba(255, 255, 255, 0.5)"}
-				// transition="background-color 5s ease-in-out"
 				minW={"100vw"}
 				px={{ base: 4, lg: "2em" }}
 				zIndex={2}
@@ -121,8 +117,6 @@ export default function Header() {
 							left={{ base: "-4em", md: "-1em", lg: "-2em" }}
 							objectFit="cover"
 							src={isScrolled ? logo : blue_logo}
-							// w={"auto"}
-							// h={"auto"}
 							position={"relative"}
 							alt="brand_logo"
 							bottom={{ base: "40px", md: "auto" }}
@@ -138,32 +132,9 @@ export default function Header() {
 						display={{ base: "none", md: "flex" }}
 					>
 						<Link to="/contact" name="my-link">
-							<Button
-								fontSize={"sm"}
-								display={{ base: "flex", md: "inline-flex" }}
-								bg={"brand.200"}
-								color={"brand.300"}
-								// textTransform="uppercase"
-								p={"1em"}
-								variant={"primary"}
-							>
-								Book an Appointment
-							</Button>
+							<PrimaryButton title="Book an Appointment" padding={"1em"} />
 						</Link>
-						<Button
-							as={"a"}
-							className="partner_btn"
-							href="tel:+1-844-777-8231"
-							display={{ base: "flex", md: "inline-flex" }}
-							fontSize={"sm"}
-							p={"1em"}
-							bg={"#eee"}
-							_hover={{
-								bg: "brand.200",
-							}}
-						>
-							{COMPANY_BIO.PHONE}
-						</Button>
+						<SecondaryButton title={COMPANY_BIO.PHONE} />
 						<ReactFlagsSelect
 							className="country_select"
 							selected={select}
