@@ -63,21 +63,21 @@ export default function WhoWeAre() {
 			borderRadius={"28px"}
 		>
 			<AnimatedComponent zoomIn>
-				<VStack mx={"auto"} w={"65%"} spacing={"1em"}>
+				<VStack m={"auto"} w={"65%"} spacing={"5"}>
+					{mainContent()}
+					<Link to="about" name="my-link">
+						<PrimaryButton title="About us" />
+					</Link>
 					<Heading
 						fontSize={{ base: "2xl", md: "3xl" }}
 						textAlign={{ base: "center" }}
 						lineHeight={"10"}
+						mb={3}
 					>
 						We bring best practices to your operation by enhancing your staff
 						with one or more of our highly qualified partners in the key
 						departments.
 					</Heading>
-
-					{mainContent()}
-					<Link to="about" name="my-link">
-						<PrimaryButton title="About us" />
-					</Link>
 				</VStack>
 			</AnimatedComponent>
 		</Stack>
