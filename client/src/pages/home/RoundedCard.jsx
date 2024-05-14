@@ -20,14 +20,14 @@ const RoundedCard = ({ data, isTab, isHome, icon }) => {
 				transform: "scale(1.01)",
 				boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
 			}}
-			h={{ base: isHome && "15em", md: isHome && "18em", lg: isHome && "24em" }}
+			h={{ base: isHome && "18em", md: isHome && "18em", lg: isHome && "24em" }}
 			justifyContent={"space-between"}
 		>
 			{isHome ? (
 				<VStack
 					justify={"space-around"}
 					alignItems={"center"}
-					height={{ base: "3em", lg: "8em" }}
+					height={{ base: "5em", lg: "8em" }}
 					borderTopLeftRadius={"28px"}
 					borderTopRightRadius={"28px"}
 					borderBottomLeftRadius={{ md: "28px" }}
