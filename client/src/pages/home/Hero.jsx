@@ -1,7 +1,8 @@
-import { Flex, HStack, Heading, Image, Stack } from "@chakra-ui/react";
+import { Flex, HStack, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import homeCoverImg from "../../assets/homeCoverImg.png";
 import ResponsiveText from "../../components/ResponsiveText";
+import TextAnimation from "../../components/TextAnimation";
 import PrimaryButton from "../../components/buttons/PrimaryButton";
 import TertiaryButton from "../../components/buttons/TertiaryButton";
 import "./Hero.css";
@@ -15,9 +16,8 @@ const Hero = () => {
 		>
 			<Flex flex={1} align={"center"} justify={"center"}>
 				<Stack spacing={6} w={{ base: "90%", md: "70%" }} px={"1em"} pt={"1em"}>
-					<Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-						Write your own script
-					</Heading>
+					<TextAnimation />
+
 					<ResponsiveText
 						text={
 							"Our fractional services help you reach your goals- whether that’s more time to spend with family or grow profits. We partner with you to bring best practices to your organization"

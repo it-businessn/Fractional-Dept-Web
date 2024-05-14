@@ -13,7 +13,7 @@ const Statement = ({ statement }) => {
 	return (
 		<Stack>
 			<Heading
-				color={"brand.500"}
+				color={"brand.200"}
 				fontSize={{ base: "3xl", md: "4xl" }}
 				textAlign={{ base: "center", md: "start" }}
 			>
@@ -30,7 +30,7 @@ const Statement = ({ statement }) => {
 							>
 								<ListIcon
 									as={MdCheckCircle}
-									color="purple.500"
+									color="brand.200"
 									d="inline-flex"
 									verticalAlign={"middle"}
 								/>

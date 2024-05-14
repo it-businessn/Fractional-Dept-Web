@@ -17,6 +17,8 @@ import { useEffect, useState } from "react";
 import { MdCheckBox } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../../components/Loader";
+import ResponsiveText from "../../components/ResponsiveText";
+import PrimaryButton from "../../components/buttons/PrimaryButton";
 import { SERVICE_TABS } from "../../constant";
 import { convertPrice } from "../../util";
 
@@ -63,14 +65,8 @@ export default function ServiceDetail() {
 			>
 				{tab.id}
 			</Heading>
-			<Text
-				px={"5"}
-				fontSize={{
-					base: "xl",
-				}}
-			>
-				{tab.details}
-			</Text>
+
+			<ResponsiveText px={"5"} text={tab.details} />
 			<Heading
 				fontSize={{
 					base: "2xl",
@@ -84,16 +80,14 @@ export default function ServiceDetail() {
 			<List spacing={3} px={"5"}>
 				{tab?.features?.map((item) => (
 					<ListItem key={item}>
-						<HStack alignItems={"center"} justify={"flex-start"}>
-							<ListIcon as={MdCheckBox} w={"2em"} h={"2em"} color="brand.300" />
-							<Text
-								fontSize={{
-									base: "sm",
-									md: "xl",
-								}}
-							>
-								{item.feature}
-							</Text>
+						<HStack alignItems={"start"} justify={"flex-start"}>
+							<ListIcon
+								as={MdCheckBox}
+								w={"1.5em"}
+								h={"1.5em"}
+								color="brand.200"
+							/>
+							<ResponsiveText text={item.feature} />
 						</HStack>
 					</ListItem>
 				))}
@@ -105,10 +99,10 @@ export default function ServiceDetail() {
 			flex={1}
 			py={isMobile && 2}
 			justify="space-evenly"
-			position="sticky"
-			bottom="0"
-			color={"brand.100"}
-			background="brand.300"
+			position={isMobile && "sticky"}
+			bottom={isMobile && "0"}
+			bg={isMobile && "var(--bg)"}
+			color={"var(--primary)"}
 			w={"100%"}
 		>
 			<HStack spacing={5}>
@@ -128,17 +122,7 @@ export default function ServiceDetail() {
 						${`${convertPrice(service.price, selectedCountry)} `}/ Month
 					</Text>
 				</VStack>
-
-				<Button
-					display={{
-						base: "flex",
-						md: "inline-flex",
-					}}
-					textTransform="capitalize"
-					p={"1em 2em"}
-				>
-					Buy Now
-				</Button>
+				<PrimaryButton title={"Buy Now"} />
 			</HStack>
 		</Flex>
 	);
@@ -148,8 +132,8 @@ export default function ServiceDetail() {
 			<Flex
 				flex={1}
 				align={"center"}
-				mt={"3em"}
-				mb={{ lg: "10em" }}
+				mt={{ base: 0, md: "3em" }}
+				mb={{ base: 0, xl: "1em" }}
 				justify={"center"}
 				flexDir="column"
 			>

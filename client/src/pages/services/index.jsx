@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ResponsiveText from "../../components/ResponsiveText";
 import { SERVICE_IT, SERVICE_TABS } from "../../constant";
 import RoundedCard from "../home/RoundedCard";
 
@@ -117,16 +118,18 @@ export default function Services() {
 										_selected={{
 											fontWeight: "bolder",
 											color: "brand.100",
-											bg: "brand.300",
+											bg: "brand.200",
 										}}
 										key={tab.id}
 										onClick={() => navigate(`/services/${tab.id}`)}
 									>
-										<Text fontSize={{ base: "md", md: "2xl" }}>
-											{isMobile && tab.id === SERVICE_IT.IT_FULL
-												? SERVICE_IT.IT
-												: tab.id}
-										</Text>
+										<ResponsiveText
+											text={
+												isMobile && tab.id === SERVICE_IT.IT_FULL
+													? SERVICE_IT.IT
+													: tab.id
+											}
+										/>
 									</Tab>
 								))}
 							</TabList>

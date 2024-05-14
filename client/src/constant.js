@@ -1,3 +1,8 @@
+import { GiArtificialIntelligence, GiHumanTarget } from "react-icons/gi";
+import { GrTechnology } from "react-icons/gr";
+import { MdAccountBalance } from "react-icons/md";
+import { SiMarketo } from "react-icons/si";
+import { TbReportMoney } from "react-icons/tb";
 import accounting from "./assets/images/services/accounting.jpg";
 import ai from "./assets/images/services/ai.jpg";
 import aiData from "./assets/images/services/aiData.jpg";
@@ -54,16 +59,17 @@ export const TABS = [
 		heading: "Accounting",
 		imgSrc: accounting,
 		subheading:
-			"Build out your accounting team with dedicated individuals who excel as team players, facilitating precision and efficiency in financial record keeping and management tasks.",
+			"Build out your accounting team with dedicated individuals who excel as team players, facilitating precision.",
 		jobTitle: ["CFO", "Controller", "Bookkeeper"],
 		buttonText: "Learn more about our Accounting solutions",
+		icon: MdAccountBalance,
 	},
 	{
 		id: "Information Technology",
 		heading: "Information Technology",
 		imgSrc: infoTech,
 		subheading:
-			"Elevate your information technology department by enlisting adept team players who will be dedicated to enabling responsive problem solving, swift adaptation and resilience.",
+			"Elevate your information technology department by enlisting adept team players.",
 		jobTitle: [
 			"Automations Specialist",
 			"Web Developer",
@@ -71,24 +77,27 @@ export const TABS = [
 			"App Developer",
 		],
 		buttonText: "Learn more about our IT solutions",
+		icon: GrTechnology,
 	},
 	{
 		id: "Marketing",
 		heading: "Marketing",
 		imgSrc: marketing,
 		subheading:
-			"Strengthen your marketing department with committed team players at its core, ensuring seamless operations and optimal performance in your promotional efforts.",
+			"Strengthen your marketing department with committed team players at its core.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
+		icon: SiMarketo,
 	},
 	{
 		id: "AI",
 		heading: "AI",
 		imgSrc: ai,
 		subheading:
-			"Embrace AI's transformative potential with our expert team of AI, data, and decision scientists. We specialize in identifying opportunities to enhance and optimize your business processes, ensuring cost-effectiveness and efficiency.",
+			"Embrace AI's transformative potential with our expert team of AI, data, and decision scientists.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
+		icon: GiArtificialIntelligence,
 	},
 	{
 		id: "Payroll",
@@ -98,6 +107,7 @@ export const TABS = [
 			"As your dedicated HR partner, we focus on simplifying tasks, fostering a positive workplace culture, and enhancing talent management.",
 		jobTitle: ["Marketing Manager", "Social Media Manager"],
 		buttonText: "Learn more about our Marketing solutions",
+		icon: GiHumanTarget,
 	},
 	{
 		id: "Payroll",
@@ -107,6 +117,7 @@ export const TABS = [
 			"Our  Administrator  ensures accurate and timely payments for your employees, handling tax deductions, and maintaining precise records.",
 		jobTitle: ["Payroll Administrator", "HR Manager"],
 		buttonText: "Learn more about our Payroll & HR solutions",
+		icon: TbReportMoney,
 	},
 ];
 
@@ -286,7 +297,7 @@ export const SERVICE_TABS = [
 					},
 				],
 				details:
-					"Content Strategists are responsible for planning, creating, and managing content to support marketing and communication goals.",
+					"Content strategists are responsible for planning, creating, and managing content to support marketing and communication goals.",
 				subheading:
 					"Take your brand narrative to the next level with our Content Strategist service: compelling storytelling, audience engagement, and effective content planning.",
 			},
