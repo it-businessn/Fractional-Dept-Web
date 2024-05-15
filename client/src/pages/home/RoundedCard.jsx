@@ -1,6 +1,5 @@
-import { Button, Icon, Image, Text, VStack } from "@chakra-ui/react";
+import { Button, Image, Text, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import ResponsiveText from "../../components/ResponsiveText";
 import { convertPrice } from "../../util";
 
 const RoundedCard = ({ data, isTab, isHome, icon }) => {
@@ -20,10 +19,10 @@ const RoundedCard = ({ data, isTab, isHome, icon }) => {
 				transform: "scale(1.01)",
 				boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
 			}}
-			h={{ base: isHome && "18em", md: isHome && "18em", lg: isHome && "24em" }}
+			h={{ base: isHome && "26em" }}
 			justifyContent={"space-between"}
 		>
-			{isHome ? (
+			{/* {isHome ? (
 				<VStack
 					justify={"space-around"}
 					alignItems={"center"}
@@ -39,21 +38,21 @@ const RoundedCard = ({ data, isTab, isHome, icon }) => {
 					<ResponsiveText align="center" text={heading} />
 					<Icon color={"brand.100"} as={icon} w={10} h={10} />
 				</VStack>
-			) : (
-				<Image
-					src={imgSrc}
-					alt="Card Image"
-					objectFit="fill"
-					borderTopLeftRadius={"28px"}
-					borderTopRightRadius={"28px"}
-					mb="4"
-					width="100%"
-					height="13em"
-					// boxShadow="0 4px 8px rgba(0, 0, 0, 0.25)"
-					borderBottomLeftRadius={{ md: "50px" }}
-					borderBottomRightRadius={{ md: "50px" }}
-				/>
-			)}
+			) : ( */}
+			<Image
+				src={imgSrc}
+				alt="Card Image"
+				objectFit="fill"
+				borderTopLeftRadius={"28px"}
+				borderTopRightRadius={"28px"}
+				mb="4"
+				width="100%"
+				height={"13em"}
+				// boxShadow="0 4px 8px rgba(0, 0, 0, 0.25)"
+				borderBottomLeftRadius={{ md: "40px" }}
+				borderBottomRightRadius={{ md: "40px" }}
+			/>
+			{/* // )} */}
 
 			{!isHome && (
 				<Text fontSize="xl" fontWeight="semibold" mb="2">
@@ -63,7 +62,7 @@ const RoundedCard = ({ data, isTab, isHome, icon }) => {
 
 			<Text
 				fontSize="md"
-				h={{ base: "auto", md: isHome ? "10em" : isTab ? "8em" : "6em" }}
+				h={{ base: "auto", md: isTab ? "8em" : "6em" }}
 				px={{ base: "1em", md: 2 }}
 				textAlign={{ base: "justify", md: "left" }}
 			>

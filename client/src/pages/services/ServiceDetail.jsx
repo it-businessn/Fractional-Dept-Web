@@ -105,15 +105,16 @@ export default function ServiceDetail() {
 			color={"var(--primary)"}
 			w={"100%"}
 		>
-			<HStack spacing={5}>
-				<VStack flex={1} align="flex-start">
-					<Text
-						fontSize={{
-							base: "2xl",
-						}}
-					>
-						{service.id}
-					</Text>
+			<HStack justify={"space-evenly"} w={"100%"}>
+				<Text
+					fontSize={{
+						base: "2xl",
+					}}
+				>
+					{/* {service.id} */}
+				</Text>
+				<VStack spacing={0}>
+					<Text fontSize="md">Starting at</Text>
 					<Text
 						fontSize={{
 							base: "2xl",

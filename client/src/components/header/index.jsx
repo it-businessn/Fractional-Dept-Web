@@ -155,10 +155,10 @@ export default function Header() {
 								<VStack alignItems={"self-start"} spacing={0}>
 									<ResponsiveText
 										text="Fractional"
-										color={"#3f51b5d9"}
+										color={"#3f51b5"}
 										bold={"bold"}
 									/>
-									<ResponsiveText text="Departments" color={"#3f51b5d9"} />
+									<ResponsiveText text="Departments" color={"#3f51b5"} />
 								</VStack>
 							</HStack>
 						</Link>

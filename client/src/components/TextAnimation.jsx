@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 const TextAnimation = () => {
 	const text = "Write your own script";
 	const myStyles = {
-		fontFamily: "'Caveat', cursive",
 		fontOpticalSizing: "auto",
 		fontWeight: 800,
-		fontStyle: "italic",
 	};
 	return (
 		<Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} style={myStyles}>

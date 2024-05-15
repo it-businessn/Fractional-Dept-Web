@@ -6,9 +6,9 @@ export default function TabService() {
 	return (
 		<Flex m={"2em 1px"}>
 			<SimpleGrid
-				columns={{ base: 1, md: 3, lg: 6 }}
+				columns={{ base: 1, md: 2, lg: 3 }}
 				spacing={"2em"}
-				maxWidth={"1400px"}
+				maxWidth={"1100px"}
 				m={"0 auto"}
 			>
 				{TABS.map((item) => (

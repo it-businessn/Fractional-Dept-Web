@@ -1,5 +1,6 @@
 import { Flex, HStack, Image, Stack } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 import homeCoverImg from "../../assets/homeCoverImg.png";
 import ResponsiveText from "../../components/ResponsiveText";
 import TextAnimation from "../../components/TextAnimation";
@@ -25,8 +26,12 @@ const Hero = () => {
 					/>
 
 					<HStack>
-						<PrimaryButton title="Learn more" />
-						<TertiaryButton title="See work" />
+						<Link to="/services/Accounting" name="my-link">
+							<PrimaryButton title="Learn more" />
+						</Link>
+						<Link to="/contact" name="my-link">
+							<TertiaryButton title="Get started" />
+						</Link>
 					</HStack>
 				</Stack>
 			</Flex>
