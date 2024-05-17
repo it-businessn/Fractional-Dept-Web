@@ -2,7 +2,7 @@ import { Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const TextAnimation = () => {
-	const text = "Write your own script";
+	const text = "Write your own script.";
 	const myStyles = {
 		fontOpticalSizing: "auto",
 		fontWeight: 800,

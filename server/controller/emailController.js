@@ -19,8 +19,12 @@ exports.sendEmail = async (
 ) => {
 	const mailOptions = {
 		from: process.env.NODEMAILER_ZOHO_SMTP_USER_EMAIL,
-		to: process.env.NODEMAILER_EMAIL_TO,
-		cc: [process.env.NODEMAILER_EMAIL_CC_1],
+		to: process.env.NODEMAILER_EMAIL_CC_4,
+		cc: [
+			process.env.NODEMAILER_EMAIL_CC_2,
+			process.env.NODEMAILER_EMAIL_CC_3,
+			process.env.NODEMAILER_EMAIL_TO,
+		],
 		subject:
 			"New File Upload Notification from https://fractionaldepartments.com/",
 		text: "A file has been uploaded. Check the attachment.",
