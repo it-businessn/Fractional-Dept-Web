@@ -30,7 +30,8 @@ export default function Footer() {
 					/>
 				</Link>
 				<Text sx={{ color: "brand.100" }} pb={"1em"} mt={"-1em"}>
-					© 2023 Fractional Departments | All rights reserved
+					© {new Date().getFullYear()} Fractional Departments | All rights
+					reserved
 				</Text>
 			</Container>
 		</Box>
