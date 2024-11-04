@@ -84,11 +84,11 @@ exports.sendGetStartedEmail = async (
 	const mailOptions = {
 		from: process.env.NODEMAILER_ZOHO_SMTP_USER_EMAIL,
 		to: process.env.NODEMAILER_EMAIL_TO,
-		cc: [
-			process.env.NODEMAILER_EMAIL_CC_1,
-			process.env.NODEMAILER_EMAIL_CC_2,
-			process.env.NODEMAILER_EMAIL_CC_3,
-		],
+		// cc: [
+		// 	process.env.NODEMAILER_EMAIL_CC_1,
+		// 	process.env.NODEMAILER_EMAIL_CC_2,
+		// 	process.env.NODEMAILER_EMAIL_CC_3,
+		// ],
 		subject: "New Form Submission from https://fractionaldepartments.com/",
 		text: "We have received a new inquiry from a potential customer. Here are the details",
 		html: ` 

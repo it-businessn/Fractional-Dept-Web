@@ -72,6 +72,7 @@ export default function Contact() {
 		});
 	const sendEmail = async (e) => {
 		e.preventDefault();
+		console.log("sendEmail");
 		setIsLoading(true);
 		try {
 			const response = await api.sendEmail(emailData);
