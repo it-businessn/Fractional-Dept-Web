@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
 		interests,
 	} = req.body;
 	try {
-		sendGetStartedEmail(
+		await sendGetStartedEmail(
 			firstName,
 			lastName,
 			email,
