@@ -66,7 +66,6 @@ export default function GetStartedForm({ onClose }) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("sendGetStartedEmail");
 		setIsSubmitting(true);
 		formData.interests = selectedCheckboxes;
 

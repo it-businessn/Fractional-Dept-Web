@@ -63,11 +63,11 @@ router.post("/", async (req, res) => {
 	const mailOptions = {
 		from: process.env.NODEMAILER_ZOHO_SMTP_USER_EMAIL,
 		to: process.env.NODEMAILER_EMAIL_TO,
-		// cc: [
-		// 	process.env.NODEMAILER_EMAIL_CC_1,
-		// 	process.env.NODEMAILER_EMAIL_CC_2,
-		// 	process.env.NODEMAILER_EMAIL_CC_3,
-		// ],
+		cc: [
+			process.env.NODEMAILER_EMAIL_CC_1,
+			process.env.NODEMAILER_EMAIL_CC_2,
+			process.env.NODEMAILER_EMAIL_CC_3,
+		],
 		subject:
 			"New Contact Form Submission from https://fractionaldepartments.com/",
 		html: agentNotificationTemplate(

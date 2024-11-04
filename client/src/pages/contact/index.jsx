@@ -72,7 +72,6 @@ export default function Contact() {
 		});
 	const sendEmail = async (e) => {
 		e.preventDefault();
-		console.log("sendEmail");
 		setIsLoading(true);
 		try {
 			const response = await api.sendEmail(emailData);
@@ -198,6 +197,7 @@ export default function Contact() {
 							<Center>
 								<Stack direction={{ base: "column", md: "row" }}>
 									<PrimaryButton
+										type={"submit"}
 										title="Submit"
 										isLoading={isLoading}
 										isDisabled={!isFormDataFilled}
